@@ -28,7 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var buildValidate = exports.buildValidate = function buildValidate(mySchemaObject, contextName) {
   return function (values) {
     var context = mySchemaObject.namedContext(contextName ? contextName : 'myContext');
-    if (context.validate(mySchemaObject.clean((0, _cloneDeep3.default)(mutableValues)))) {
+    if (context.validate(mySchemaObject.clean((0, _cloneDeep3.default)(values)))) {
       // isValid
       return {};
     }
