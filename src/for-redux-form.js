@@ -17,7 +17,7 @@ export const buildValidate = (mySchemaObject, contextName) => {
       contextName ? contextName : 'myContext'
     );
     const mutableValues = { ...values }
-    if (context.validate(mySchemaObject.clean(mutableValues)) {
+    if (context.validate(mySchemaObject.clean(mutableValues))) {
       // isValid
       return {};
     }
@@ -27,5 +27,3 @@ export const buildValidate = (mySchemaObject, contextName) => {
     ));
   };
 };
-
-
