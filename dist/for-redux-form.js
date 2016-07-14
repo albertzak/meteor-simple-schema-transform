@@ -13,9 +13,9 @@ var _fromPairs2 = require('lodash/fromPairs');
 
 var _fromPairs3 = _interopRequireDefault(_fromPairs2);
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _cloneDeep2 = require('lodash/cloneDeep');
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _cloneDeep3 = _interopRequireDefault(_cloneDeep2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,8 +28,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var buildValidate = exports.buildValidate = function buildValidate(mySchemaObject, contextName) {
   return function (values) {
     var context = mySchemaObject.namedContext(contextName ? contextName : 'myContext');
-    var mutableValues = (0, _extends3.default)({}, values);
-    if (context.validate(mySchemaObject.clean(mutableValues))) {
+    if (context.validate(mySchemaObject.clean((0, _cloneDeep3.default)(mutableValues)))) {
       // isValid
       return {};
     }
