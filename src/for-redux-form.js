@@ -16,7 +16,8 @@ export const buildValidate = (mySchemaObject, contextName) => {
     const context = mySchemaObject.namedContext(
       contextName ? contextName : 'myContext'
     );
-    if (context.validate(mySchemaObject.clean(values))) {
+    const mutableValues = { ...values }
+    if (context.validate(mySchemaObject.clean(mutableValues)) {
       // isValid
       return {};
     }
